@@ -1,10 +1,10 @@
-# app/routes.py
+from flask import Flask, render_template
 
-from flask import Blueprint
+app = Flask(__name__)
 
-main = Blueprint('main', __name__)
-
-
-@main.route('/')
+@app.route('/')
 def home():
-    return "Hello, Flask!"
+    return render_template('home.html')  # Renders home.html file from templates folder
+
+if __name__ == '__main__':
+    app.run(debug=True)
