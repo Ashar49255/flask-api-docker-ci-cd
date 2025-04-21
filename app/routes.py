@@ -1,12 +1,10 @@
 # app/routes.py
-from flask import Blueprint, jsonify
+
+from flask import Blueprint
 
 main = Blueprint('main', __name__)
 
-@main.route('/')
-def index():
-    return jsonify({"message": "Welcome to my Flask API!"})
 
-@main.route('/products')
-def get_products():
-    return jsonify({"products": ["item1", "item2"]})
+@main.route('/')
+def home():
+    return "Hello, Flask!"
